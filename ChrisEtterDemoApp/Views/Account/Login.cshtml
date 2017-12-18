@@ -1,0 +1,43 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm())
+        {
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label>Username</label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(x => x.UserName)</span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(x => x.Password)</span>
+            </div>
+            <div class="form-group">
+                @Html.CheckBoxFor(x => x.RememberMe, new { @class = "checkbox-inline" })
+                <label>Remember Me?</label>
+                <span class="text-danger">@Html.ValidationMessageFor(x => x.RememberMe)</span>
+                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+
+
+        }
+
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

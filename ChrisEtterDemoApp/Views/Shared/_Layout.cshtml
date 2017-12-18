@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <header class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand"><i class="fa fa-windows"></i>&nbsp;Chris Etter's Demo App</div>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">&#9776;</button>
+            </div>
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "App")</li>
+                    <li>@Html.ActionLink("About", "About", "App")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "App")</li>
+                    <li>@Html.ActionLink("Shop", "Shop", "App")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <section class="container">
+        <h2 class="text-center">@ViewData["Title"]</h2>
+        @RenderBody()
+    </section>
+
+    <footer class="container">
+        <div class="text-center">Copyright @DateTime.Now.Year Christopher Etter</div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/scripts.js"></script>
+    @RenderSection("Scripts", false)
+
+</body>
+</html>
+
