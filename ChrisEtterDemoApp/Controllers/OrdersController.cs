@@ -94,7 +94,8 @@ namespace ChrisEtterDemoApp.Controllers
 
                     newOrder.User = currentUser;
 
-                    _repository.AddEntity(newOrder);
+                    //_repository.AddEntity(newOrder);
+                    _repository.AddOrder(newOrder);
 
                     if (_repository.SaveAll())
                     {

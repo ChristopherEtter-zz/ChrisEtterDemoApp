@@ -12,6 +12,6 @@ namespace ChrisEtterDemoApp.Data
         bool SaveAll();
         Order GetOrderById(string name, int orderId);
         void AddEntity<T>(T model) where T : class;
-        
+        void AddOrder(Order newOrder);
     }
 }
