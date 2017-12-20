@@ -37,7 +37,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'Chris\'s Shop';
     }
@@ -80,7 +80,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
@@ -116,6 +116,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__order__ = __webpack_require__("../../../../../ClientApp/app/shared/order.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -129,9 +130,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var DataService = (function () {
+
+var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
+        this.order = new __WEBPACK_IMPORTED_MODULE_4__order__["a" /* Order */]();
     }
     DataService.prototype.handleError = function (error) {
         var errMsg = error.message || 'Server error';
@@ -141,10 +144,25 @@ var DataService = (function () {
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products/getallproducts")
-            .map(function (data) {
-            _this.products = data;
-            return true;
-        });
+            .map(function (data) { return _this.products = data; });
+    };
+    DataService.prototype.addToOrder = function (product) {
+        var item = this.order.items.find(function (i) { return i.productId == product.id; });
+        if (item) {
+            item.quantity++;
+        }
+        else {
+            item = new __WEBPACK_IMPORTED_MODULE_4__order__["b" /* OrderItem */]();
+            item.productId = product.id;
+            item.productArtist = product.artist;
+            item.productCategory = product.category;
+            item.productArtId = product.artId;
+            item.productTitle = product.title;
+            item.productSize = product.size;
+            item.unitPrice = product.price;
+            item.quantity = 1;
+            this.order.items.push(item);
+        }
     };
     DataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["w" /* Injectable */])(),
@@ -157,10 +175,44 @@ var DataService = (function () {
 
 /***/ }),
 
+/***/ "../../../../../ClientApp/app/shared/order.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Order; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return OrderItem; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+
+var Order = /** @class */ (function () {
+    function Order() {
+        this.orderDate = new Date();
+        this.items = new Array();
+    }
+    Object.defineProperty(Order.prototype, "subTotal", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_0_lodash__["sum"](__WEBPACK_IMPORTED_MODULE_0_lodash__["map"](this.items, function (i) { return i.unitPrice * i.quantity; }));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Order;
+}());
+
+var OrderItem = /** @class */ (function () {
+    function OrderItem() {
+    }
+    return OrderItem;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../ClientApp/app/shop/cart.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Cart</h3>"
+module.exports = "<h3>Shopping Cart</h3>\r\n<div>#/Itmes: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subTotal | currency:\"USD\":symbol }}</div>\r\n<table class=\"table table-condensed table-hover\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n   <tbody>\r\n       <tr *ngFor=\"let o of data.order.items\">\r\n           <td>{{ o.productCategory }} - {{ o.productTitle }}</td>\r\n           <td>{{ o.quantity }}</td>\r\n           <td>{{ o.unitPrice | currency:\"USD\":symbol}}</td>\r\n           <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":symbol }}</td>\r\n       </tr>\r\n   </tbody>\r\n</table>"
 
 /***/ }),
 
@@ -182,7 +234,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var Cart = (function () {
+var Cart = /** @class */ (function () {
     function Cart(data) {
         this.data = data;
     }
@@ -209,7 +261,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".product-info {\r\n    min-height: 500px;\r\n}\r\n\r\n.product-info img{\r\n    max-width: 100px;\r\n    float:left;\r\n    margin: 0 5px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name{\r\n    font-size: large;\r\n    font-weight: bold;\r\n}", ""]);
+exports.push([module.i, ".product-info {\r\n    min-height: 400px;\r\n}\r\n\r\n.product-info img{\r\n    max-width: 100px;\r\n    float:left;\r\n    margin: 0 5px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name{\r\n    font-size: large;\r\n    font-weight: bold;\r\n}", ""]);
 
 // exports
 
@@ -222,7 +274,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../ClientApp/app/shop/productList.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"product-info col-md-4 well-sm\" *ngFor=\"let p of products\">\r\n        <img src=\"/img/{{ p.artId }}.jpg\" class=\"img-responsive\" [alt]=\"p.title\"/>\r\n        <div class=\"product-name\">{{ p.category }} - {{ p.size }}</div>\r\n       \r\n            <div>Price: {{ p.price | currency:\"USD\":symbol }}</div>\r\n            <div>Artist: {{ p.Artist }}</div>\r\n            <div>Title: {{ p.title }}</div>\r\n            <div>Description: {{ p.artDescription }}</div>\r\n        \r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\">Buy</button>\r\n    </div>\r\n   \r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"product-info col-md-4 well well-sm\" *ngFor=\"let p of products\">\r\n        <img src=\"/img/{{ p.artId }}.jpg\" class=\"img-responsive\" [alt]=\"p.title\"/>\r\n        <div class=\"product-name\">{{ p.category }} - {{ p.size }}</div>\r\n       \r\n            <div>Price: {{ p.price | currency:\"USD\":symbol }}</div>\r\n            <div>Artist: {{ p.Artist }}</div>\r\n            <div>Title: {{ p.title }}</div>\r\n            <div>Description: {{ p.artDescription }}</div>\r\n        \r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n    </div>\r\n   \r\n</div>"
 
 /***/ }),
 
@@ -244,7 +296,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ProductList = (function () {
+var ProductList = /** @class */ (function () {
     function ProductList(data) {
         this.data = data;
         //this.products = data.products;
@@ -257,6 +309,9 @@ var ProductList = (function () {
                 _this.products = _this.data.products;
             }
         });
+    };
+    ProductList.prototype.addProduct = function (product) {
+        this.data.addToOrder(product);
     };
     ProductList = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({

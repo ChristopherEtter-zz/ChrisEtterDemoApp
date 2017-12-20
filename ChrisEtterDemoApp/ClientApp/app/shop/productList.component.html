@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="product-info col-md-4 well-sm" *ngFor="let p of products">
+    <div class="product-info col-md-4 well well-sm" *ngFor="let p of products">
         <img src="/img/{{ p.artId }}.jpg" class="img-responsive" [alt]="p.title"/>
         <div class="product-name">{{ p.category }} - {{ p.size }}</div>
        
@@ -8,7 +8,7 @@
             <div>Title: {{ p.title }}</div>
             <div>Description: {{ p.artDescription }}</div>
         
-        <button id="buyButton" class="btn btn-success btn-sm pull-right">Buy</button>
+        <button id="buyButton" class="btn btn-success btn-sm pull-right" (click)="addProduct(p)">Buy</button>
     </div>
    
 </div>

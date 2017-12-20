@@ -3,13 +3,18 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { Product } from "./product";
 import "rxjs/add/operator/map";
+import { Order, OrderItem } from "./order";
+
 @Injectable()
 export class DataService {
 
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient) {
     }
 
     public products: Product[];
+    public order: Order = new Order();
+    
+
 
     private handleError(error: any) {
         let errMsg = error.message || 'Server error';
@@ -17,18 +22,37 @@ export class DataService {
         return Observable.throw(errMsg);
     }
 
-    public loadProducts(){
-        return this.http.get("/api/products/getallproducts")
-            .map((data: any[]) => { 
-                this.products = data; 
-                return true; 
-            });
-           
+
+    public loadProducts() : Observable<Product[]>{
+        return this.http.get<Product[]>("/api/products/getallproducts")
+            .map((data) => this.products = data);
     }
 
-    //public loadProducts() : Observable<Product[]>{
-    //    return this.http.get("/api/products/getallproducts")
-    //        .map((data: Response) => this.products = data.json());
-    //}
+    public addToOrder(product: Product) {
+   
+        let item: OrderItem = this.order.items.find(i => i.productId == product.id);
+        if (item) {
+
+            item.quantity++;
+
+        } else {
+
+            item = new OrderItem();
+            item.productId = product.id;
+            item.productArtist = product.artist;
+            item.productCategory = product.category;
+            item.productArtId = product.artId;
+            item.productTitle = product.title;
+            item.productSize = product.size;
+            item.unitPrice = product.price;
+            item.quantity = 1;
+
+            this.order.items.push(item);
+        }
+       
+
+       
+
+    }
 
 }

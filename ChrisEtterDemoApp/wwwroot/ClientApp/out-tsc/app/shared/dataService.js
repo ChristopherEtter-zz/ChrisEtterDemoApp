@@ -22,13 +22,17 @@ var DataService = /** @class */ (function () {
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
+    //public loadProducts(){
+    //    return this.http.get("/api/products/getallproducts")
+    //        .map((data: any[]) => { 
+    //            this.products = data; 
+    //            return true; 
+    //        });
+    //}
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products/getallproducts")
-            .map(function (data) {
-            _this.products = data;
-            return true;
-        });
+            .map(function (data) { return _this.products = data; });
     };
     DataService = __decorate([
         core_1.Injectable(),
