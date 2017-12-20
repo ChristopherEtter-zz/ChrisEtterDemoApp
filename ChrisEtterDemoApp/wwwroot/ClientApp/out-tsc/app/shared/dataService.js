@@ -11,12 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
-var DataService = (function () {
+var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.products = [];
     }
+    DataService.prototype.handleError = function (error) {
+        var errMsg = error.message || 'Server error';
+        console.error(errMsg); // log to console instead
+        return Observable_1.Observable.throw(errMsg);
+    };
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products/getallproducts")
@@ -25,11 +30,11 @@ var DataService = (function () {
             return true;
         });
     };
+    DataService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], DataService);
     return DataService;
 }());
-DataService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.HttpClient])
-], DataService);
 exports.DataService = DataService;
 //# sourceMappingURL=dataService.js.map

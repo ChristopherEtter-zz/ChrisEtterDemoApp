@@ -1,8 +1,14 @@
 ﻿<div class="row">
-    <div class="">
-        <ul>
-            <li *ngFor="let p of products">{{ p.title }}: {{ p.price | currency:"USD":true }}</li>
-        </ul>
+    <div class="product-info col-md-4 well-sm" *ngFor="let p of products">
+        <img src="/img/{{ p.artId }}.jpg" class="img-responsive" [alt]="p.title"/>
+        <div class="product-name">{{ p.category }} - {{ p.size }}</div>
+       
+            <div>Price: {{ p.price | currency:"USD":symbol }}</div>
+            <div>Artist: {{ p.Artist }}</div>
+            <div>Title: {{ p.title }}</div>
+            <div>Description: {{ p.artDescription }}</div>
+        
+        <button id="buyButton" class="btn btn-success btn-sm pull-right">Buy</button>
     </div>
-    <div class=""></div>
+   
 </div>

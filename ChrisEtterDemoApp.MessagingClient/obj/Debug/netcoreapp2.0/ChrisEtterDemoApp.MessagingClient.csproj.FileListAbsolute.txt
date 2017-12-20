@@ -18,4 +18,3 @@ C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MessagingClient\
 C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MessagingClient\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MessagingClient.AssemblyInfo.cs
 C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MessagingClient\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MessagingClient.dll
 C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MessagingClient\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MessagingClient.pdb
-C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MessagingClient\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MessagingClient.csprojResolveAssemblyReference.cache
