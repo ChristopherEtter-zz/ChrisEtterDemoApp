@@ -1,0 +1,11 @@
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\bin\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.deps.json
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\bin\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.runtimeconfig.json
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\bin\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.runtimeconfig.dev.json
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\bin\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.dll
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\bin\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.pdb
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.csprojResolveAssemblyReference.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.csproj.CoreCompileInputs.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.AssemblyInfoInputs.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.AssemblyInfo.cs
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.dll
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.Data.EF\obj\Release\netcoreapp2.0\ChrisEtterDemoApp.Data.EF.pdb

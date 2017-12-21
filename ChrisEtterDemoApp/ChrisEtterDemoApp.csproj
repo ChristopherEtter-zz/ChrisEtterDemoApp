@@ -21,4 +21,12 @@
     <ProjectReference Include="..\ChrisEtterDemoApp.MessagingClient\ChrisEtterDemoApp.MessagingClient.csproj" />
   </ItemGroup>
 
+  <Target Name="PublishScripts" BeforeTargets="BeforePublish">
+    <Exec Command="npm install"></Exec>
+    <Exec Command="bower install"></Exec>
+    <Exec Command="gulp"></Exec>
+    <Exec Command="ng build"></Exec>
+  </Target>
+  
+  
 </Project>

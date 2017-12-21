@@ -1,0 +1,15 @@
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=ChrisEtterDemoApp
+--content-root=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Pages\Error.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Pages\_ViewImports.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Pages\_ViewStart.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\Account\Login.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\App\About.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\App\Contact.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\App\Index.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\App\Shop.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\Shared\_Layout.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\_ViewImports.cshtml
+--file=C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp\Views\_ViewStart.cshtml
