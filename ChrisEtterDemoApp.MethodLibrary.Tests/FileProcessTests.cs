@@ -17,33 +17,29 @@ namespace ChrisEtterDemoApp.MethodLibrary.Tests
         public TestContext TestContext { get; set; }
         #endregion
 
-        #region Initialization / Cleanup Methods
+        #region Class Initialize and Cleanup
         [ClassInitialize]
         public static void ClassInitialize(TestContext tc)
         {
-            // TODO: Initialize for all tests within a class
-            tc.WriteLine("In ClassInitialize");
+            tc.WriteLine("In the Class Initialize.");
         }
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            // TODO: Clean up after all tests within this class
         }
+        #endregion
 
+        #region Test Initialize and Cleanup
         [TestInitialize]
         public void TestInitialize()
         {
-            TestContext.WriteLine("In TestInitialize");
-
-            _GoodFileName = FILE_NAME;
-
-            if (TestContext.TestName == "FileNameDoesExist")
+            if (TestContext.TestName.StartsWith("FileNameDoesExist"))
             {
+                _GoodFileName = FILE_NAME;
                 if (!string.IsNullOrEmpty(_GoodFileName))
                 {
-                    TestContext.WriteLine("Creating file: " + _GoodFileName);
-                    // Create the 'Good' file.
+                    TestContext.WriteLine("Creating File: " + _GoodFileName);
                     File.AppendAllText(_GoodFileName, "Some Text");
                 }
             }
@@ -52,14 +48,12 @@ namespace ChrisEtterDemoApp.MethodLibrary.Tests
         [TestCleanup]
         public void TestCleanup()
         {
-            TestContext.WriteLine("In TestCleanup");
-
-            if (TestContext.TestName == "FileNameDoesExist")
+            if (TestContext.TestName.StartsWith("FileNameDoesExist"))
             {
-                // Delete file
-                if (File.Exists(_GoodFileName))
+
+                if (!string.IsNullOrEmpty(_GoodFileName))
                 {
-                    TestContext.WriteLine("Deleting file: " + _GoodFileName);
+                    TestContext.WriteLine("Deleting File: " + _GoodFileName);
                     File.Delete(_GoodFileName);
                 }
             }
