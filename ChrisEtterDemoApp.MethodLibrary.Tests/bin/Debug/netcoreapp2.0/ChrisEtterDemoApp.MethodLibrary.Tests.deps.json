@@ -11,7 +11,9 @@
           "ChrisEtterDemoApp.MethodLibrary": "1.0.0",
           "MSTest.TestAdapter": "1.2.0",
           "MSTest.TestFramework": "1.2.0",
-          "Microsoft.NET.Test.Sdk": "15.5.0"
+          "Microsoft.NET.Test.Sdk": "15.5.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0.0",
+          "Microsoft.IdentityModel.Protocols": "2.1.4.0"
         },
         "runtime": {
           "ChrisEtterDemoApp.MethodLibrary.Tests.dll": {}
@@ -1003,6 +1005,16 @@
         "runtime": {
           "ChrisEtterDemoApp.MethodLibrary.dll": {}
         }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/2.1.4.0": {
+        "runtime": {
+          "Microsoft.IdentityModel.Protocols.dll": {}
+        }
       }
     }
   },
@@ -1511,6 +1523,16 @@
     },
     "ChrisEtterDemoApp.MethodLibrary/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.IdentityModel.Protocols/2.1.4.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
