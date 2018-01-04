@@ -1,0 +1,9 @@
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\bin\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.deps.json
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\bin\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.dll
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\bin\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.pdb
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.csprojResolveAssemblyReference.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.csproj.CoreCompileInputs.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.AssemblyInfoInputs.cache
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.AssemblyInfo.cs
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.dll
+C:\GitHub\ChrisEtterDemoApp\ChrisEtterDemoApp\ChrisEtterDemoApp.MethodLibrary\obj\Debug\netcoreapp2.0\ChrisEtterDemoApp.MethodLibrary.pdb
